@@ -3,8 +3,10 @@
 ## Technology Stack
 
 - [React](https://react.dev/)
+- [React Router](https://reactrouter.com/)
 - [Vite](https://vite.dev/) / [Vitest](https://vitest.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Playwright](https://playwright.dev/) for e2e testing
 
 ## Requirements
 
