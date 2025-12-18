@@ -20,7 +20,7 @@ jobs:
       - name: Run Playwright tests
         run: pnpm exec playwright test
         env:
-          BASE_URL: ${{ "https://portfolio-8o3.pages.dev/" }}
+          BASE_URL: https://portfolio-8o3.pages.dev/
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
