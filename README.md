@@ -70,7 +70,7 @@ pnpm e2e // chrome
 or
 pnpm e2e:firefox
 or
-pnpm e2e:safari
+pnpm e2e:webkit
 ```
 
 or to run with UI for debugging
