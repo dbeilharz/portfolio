@@ -1,6 +1,6 @@
 // Images
-import aliceLogin from "/src/images/projects/alice/login.webp";
-import aliceLoginMobile from "/src/images/projects/alice/login-mobile.webp";
+import aliceCustomerPage from "/src/images/projects/alice/customer-page.webp";
+import aliceCustomerPageMobile from "/src/images/projects/alice/customer-page-mobile.webp";
 import stockResults from "/src/images/projects/stock-locator/results.webp";
 import stockResultsMobile from "/src/images/projects/stock-locator/results-mobile.webp";
 import tradeinValuation from "/src/images/projects/online-tools/tradein-valuation.webp";
@@ -12,15 +12,15 @@ export const latestWorkList = [
   {
     name: "ALICE",
     skills: ["React", "NextJS", "AI", "Product Design", "QA"],
-    linkTo: "latest-work",
-    image: aliceLogin,
-    imageMobile: aliceLoginMobile,
-    imageDescription: "ALICE Login screen",
+    linkTo: "",
+    image: aliceCustomerPage,
+    imageMobile: aliceCustomerPageMobile,
+    imageDescription: "ALICE Customer Page",
   },
   {
     name: "Online Tools",
     skills: ["React", "Vite", "Product Design", "QA"],
-    linkTo: "latest-work",
+    linkTo: "",
     image: tradeinValuation,
     imageMobile: tradeinValuationMobile,
     imageDescription: "Trade-In Valuation Widget",
@@ -28,7 +28,7 @@ export const latestWorkList = [
   {
     name: "Stock Locator",
     skills: ["PHP", "JS", "MySQL", "API"],
-    linkTo: "latest-work",
+    linkTo: "",
     image: stockResults,
     imageMobile: stockResultsMobile,
     imageDescription: "Stock results page",
@@ -36,7 +36,7 @@ export const latestWorkList = [
   {
     name: "WordPress Widgets",
     skills: ["PHP", "JS", "API"],
-    linkTo: "latest-work",
+    linkTo: "",
     image: contactForm,
     imageMobile: contactFormMobile,
     imageDescription: "WordPress Banner Plugin",
