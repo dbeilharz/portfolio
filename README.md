@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# Daniel Beilharz Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Technology Stack
 
-Currently, two official plugins are available:
+- [React](https://react.dev/)
+- [Vite](https://vite.dev/) / [Vitest](https://vitest.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requirements
 
-## React Compiler
+- [Node.js](https://nodejs.org/en) 20+ and [PnPm](https://pnpm.io/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Prettier**
 
-## Expanding the ESLint configuration
+[Prettier](https://prettier.io/) is used to ensure consistent formatting in the codebase.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+It is recommended to install the `Prettier - Code formatter` plugin (Author
+prettier.io) in VS Code and enable `Save on format`.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. Under `Settings`, set `Default Formatter` to `Prettier - Code formatter`.
+2. Under `Settings`, enable `Format on save` checkbox.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Alternatively, `pnpm prettier` command can be run manually to format the entire codebase.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Getting Started
+
+This codebase uses `PnPm` package manager to utilise it's speed and disk space efficiency features.
+Usage is very similar to `npm` on the surface, but feel free to check out [PnPm motivation](https://pnpm.io/motivation) for more information.
+
+**Install PnPm**
+
+```bash
+npm install -g pnpm
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**Install Dependancies**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
 ```
+
+**Run Local Development Server**
+
+```bash
+pnpm dev
+```
+
+Local Development Server should now be accessible via `http://localhost:5173/`
+
+## Unit Tests
+
+```bash
+pnpm test
+```
+
+## TS Checks / Linting
+
+```bash
+pnpm ts
+
+pnpm lint
+```
+
+Alternatively running `pn all` will run commands to do unit test, linting and TypeScript checks.
+
+## End To End Tests
+
+```bash
+pnpm e2e // chrome
+or
+pnpm e2e:firefox
+or
+pnpm e2e:safari
+```
+
+or to run with UI for debugging
+
+```bash
+pnpm e2e:ui
+```
+
+You can also specify the browser in UI mode like so
+
+```bash
+pnpm e2e:ui --project firefox
+```
+
+## CI/CD
