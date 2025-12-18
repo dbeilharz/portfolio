@@ -1,9 +1,9 @@
 import { test, expect } from "@playwright/test";
 
-const { describe, beforeEach } = test;
+const { describe } = test;
 
 describe("Home Page", () => {
-  beforeEach(async ({ page }) => {
+  test.beforeEach(async ({ page }) => {
     await page.goto("http://localhost:5173/");
   });
 
