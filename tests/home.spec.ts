@@ -4,9 +4,7 @@ const { describe } = test;
 
 describe("Home Page", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto(
-      "http://portfolio-2346.s3-website-ap-southeast-2.amazonaws.com/"
-    );
+    await page.goto("/");
   });
 
   test("has title", async ({ page }) => {
