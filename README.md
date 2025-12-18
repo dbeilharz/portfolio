@@ -3,8 +3,10 @@
 ## Technology Stack
 
 - [React](https://react.dev/)
+- [React Router](https://reactrouter.com/)
 - [Vite](https://vite.dev/) / [Vitest](https://vitest.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Playwright](https://playwright.dev/) for e2e testing
 
 ## Requirements
 
@@ -70,7 +72,7 @@ pnpm e2e // chrome
 or
 pnpm e2e:firefox
 or
-pnpm e2e:safari
+pnpm e2e:webkit
 ```
 
 or to run with UI for debugging
