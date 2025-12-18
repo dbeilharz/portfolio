@@ -36,12 +36,13 @@ describe("LateskWorkItem", () => {
   });
 
   it("renders view project link when it exists", () => {
-    setup();
+    const sampleLink = "/latest-work";
+    setup({ ...baseProps, linkTo: sampleLink });
 
     const link = screen.getByRole("link", { name: /view project/i });
 
     expect(link).toBeInTheDocument();
-    expect(link).toHaveAttribute("href", `/${baseProps.linkTo}`);
+    expect(link).toHaveAttribute("href", sampleLink);
   });
 
   it("does not render a link when linkTo is not provided", () => {
