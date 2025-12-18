@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: var(--color-default);
+  background-color: var(--color-background);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --card-top-offset: 2em;
+}
+
+@theme {
+  --color-default: light-dark(rgba(0, 0, 0, 0.75), rgba(255, 255, 255, 0.75));
+  --color-primary: light-dark(#006adc, #3395ff);
+  --color-heading: light-dark(#000, #fff);
+  --color-background: light-dark(#fff, #23272f);
+  --color-secondary-bg: light-dark(#f4f4f4, #191b20);
+  --font-poppins: "Poppins", sans-serif;
+  --text-5xl--line-height: 1.5;
+}
+
+/* Base styles */
+html {
+  font-size: 16px;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Utilities */
+@layer utilities {
+  .p-container {
+    @apply flex w-full flex-col gap-5 text-lg lg:text-xl;
+  }
+  .btn {
+    @apply inline-block rounded-4xl px-5 py-1.5;
+  }
+}
+
+.cards {
+  grid-template-rows: repeat(var(--numcards), auto);
+  view-timeline-name: --cards-element-scrolls-in-body;
+}
+
+.card {
+  top: calc(var(--index) * var(--card-top-offset));
+  --index0: calc(var(--index) - 1);
+  --reverse-index: calc(var(--numcards) - var(--index0));
+  --reverse-index0: calc(var(--reverse-index) - 1);
+}
+
+.card__content {
+  box-shadow:
+    0 0.2em 1em rgba(0, 0, 0, 0.1),
+    0 1em 2em rgba(0, 0, 0, 0.1),
+    0 1em 3em rgba(255, 255, 255, 0.1);
+  --start-range: calc(var(--index0) / var(--numcards) * 100%);
+  --end-range: calc((var(--index)) / var(--numcards) * 100%);
+  animation: linear scale forwards;
+  animation-timeline: --cards-element-scrolls-in-body;
+  animation-range: exit-crossing var(--start-range) exit-crossing
+    var(--end-range);
+}
+
+@keyframes scale {
+  to {
+    transform: scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
+  }
+}
