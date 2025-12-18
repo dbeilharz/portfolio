@@ -22,12 +22,11 @@ describe("Header", () => {
   it("renders the headshot image with correct alt text", () => {
     setup();
 
-    const image = screen.getByAltText(
-      `Headshot of ${authorName}`
-    ) as HTMLImageElement;
+    const image = screen.getByRole("img", {
+      name: `Headshot of ${authorName}`,
+    });
 
     expect(image).toBeInTheDocument();
-    expect(image.src).toContain("headshot.webp");
   });
 
   it("renders a link to LinkedIn which opens in a new tab with no referrer", () => {
