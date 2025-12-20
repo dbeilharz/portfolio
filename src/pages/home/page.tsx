@@ -8,6 +8,10 @@ import HomeLatestWork from "./components/latestWork/latestWork";
 export default function Home() {
   return (
     <>
+      <meta
+        name="description"
+        content="Full-stack Developer specialising in building modern, scalable Front-end applications with React. I have strong Back-end experience with PHP and MySQL as well as product design and delivery."
+      />
       <Header />
       <HomeIntroduction />
       <HomeExperience />
