@@ -19,7 +19,17 @@ export default function Footer() {
         </a>
       </div>
       <p className="text-xs lg:text-sm">
-        &copy; Copyright {year} Daniel Beilharz.
+        &copy; Copyright {year} Daniel Beilharz. Built with React. View source
+        code on{" "}
+        <a
+          className="text-primary"
+          href="https://github.com/dbeilharz/portfolio"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Github
+        </a>
+        .
       </p>
     </Wrapper>
   );

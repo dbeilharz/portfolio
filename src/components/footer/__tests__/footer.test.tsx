@@ -19,4 +19,20 @@ describe("Footer", () => {
     const text = screen.getByText(/daniel beilharz/i);
     expect(text).toBeInTheDocument();
   });
+
+  it("renders a link to GitHub which opens in a new tab with no referrer", () => {
+    setup();
+
+    const link = screen.getByRole("link", {
+      name: /github/i,
+    });
+
+    expect(link).toBeInTheDocument();
+    expect(link).toHaveAttribute(
+      "href",
+      "https://github.com/dbeilharz/portfolio"
+    );
+    expect(link).toHaveAttribute("target", "_blank");
+    expect(link).toHaveAttribute("rel", "noreferrer");
+  });
 });
