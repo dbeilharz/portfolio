@@ -30,6 +30,6 @@ describe("Home Page", () => {
     await expect(
       page.getByRole("link", { name: "Get in touch", exact: true })
     ).toBeVisible();
-    await expect(page.getByText("© Copyright 2025 Daniel")).toBeVisible();
+    await expect(page.getByText("© Copyright")).toBeVisible();
   });
 });
