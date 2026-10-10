@@ -1,7 +1,7 @@
 // Components
 import Wrapper from "@/layout/layout";
 import Heading from "@/components/ui/heading";
-import { myStackData } from "@/data/my-stack-list";
+import { myStackData } from "@/data/my-stack";
 import {
   SiReact,
   SiNextdotjs,

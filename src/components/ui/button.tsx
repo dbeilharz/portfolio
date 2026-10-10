@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, type LinkProps } from "react-router";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "outline";
@@ -27,14 +27,21 @@ const Button: React.FC<ButtonProps> = ({
       ? "bg-primary text-white"
       : "border border-primary text-primary";
 
-  const sizeStyles = size === "sm" ? "text-sm" : size === "lg" ? "text-lg" : "";
+  let sizeStyles = "";
+  if (size === "sm") {
+    sizeStyles = "text-sm";
+  } else if (size === "lg") {
+    sizeStyles = "text-lg";
+  }
 
   const combinedClassName = `${baseStyles} ${variantStyles} ${sizeStyles} ${className}`;
 
   // Internal Route
   if (to) {
+    const linkProps = { ...props } as Omit<LinkProps, "to" | "className">;
+
     return (
-      <Link to={to} className={combinedClassName} {...(props as any)}>
+      <Link to={to} className={combinedClassName} {...linkProps}>
         {children}
       </Link>
     );
@@ -43,7 +50,11 @@ const Button: React.FC<ButtonProps> = ({
   // If an href is provided render as an anchor tag
   if (href) {
     return (
-      <a href={href} className={combinedClassName} {...(props as any)}>
+      <a
+        href={href}
+        className={combinedClassName}
+        {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+      >
         {children}
       </a>
     );

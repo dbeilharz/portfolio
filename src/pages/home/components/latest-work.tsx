@@ -8,7 +8,7 @@ import { latestWorkData } from "@/data/latest-work";
 
 export default function HomeLatestWork() {
   return (
-    <Wrapper>
+    <Wrapper id="latest-work">
       <Heading as="h2">Latest Work</Heading>
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
         {latestWorkData.map((item) => (

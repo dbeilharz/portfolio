@@ -2,7 +2,7 @@
 import Wrapper from "@/layout/layout";
 import Heading from "@/components/ui/heading";
 import ExperienceItem from "./experience-item";
-import { experienceList } from "./experience-list";
+import { experienceList } from "@/data/experience";
 
 export default function HomeExperience() {
   return (

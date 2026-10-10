@@ -18,7 +18,7 @@ export default function LatestWorkItem({
   image,
   imageMobile,
   imageDescription,
-}: latestWorkItemProps) {
+}: Readonly<latestWorkItemProps>) {
   return (
     <div className="w-full">
       <div className="bg-background flex origin-[50%_0%] flex-col gap-6 rounded-lg">

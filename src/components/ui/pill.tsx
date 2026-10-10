@@ -6,7 +6,7 @@ export type PillProps = {
   children: string;
 };
 
-export default function Pill({ className, children }: PillProps) {
+export default function Pill({ className, children }: Readonly<PillProps>) {
   return (
     <div
       className={twMerge(

@@ -28,7 +28,7 @@ export default function Footer() {
         >
           Github
         </a>
-        .
+        {"."}
       </p>
     </Wrapper>
   );

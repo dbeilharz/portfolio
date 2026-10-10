@@ -13,7 +13,7 @@ export default function Heading({
   as: Tag = "h1",
   className,
   children,
-}: HeadingProps) {
+}: Readonly<HeadingProps>) {
   return (
     <Tag
       className={twMerge(

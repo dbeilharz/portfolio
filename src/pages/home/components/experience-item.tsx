@@ -10,7 +10,7 @@ export default function ExperienceItem({
   position,
   company,
   href,
-}: ExperienceItemProps) {
+}: Readonly<ExperienceItemProps>) {
   return (
     <div className="border-b border-dashed pb-5">
       <p className="text-sm lg:text-base">{date}</p>

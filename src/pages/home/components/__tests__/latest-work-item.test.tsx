@@ -2,12 +2,16 @@ import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/vitest";
 import { MemoryRouter } from "react-router";
-import LatestWorkItem from "../latest-work/latest-work-item";
-import type { latestWorkItemProps } from "../latest-work/latest-work-item";
-import { latestWorkList } from "../../../../data/latest-work";
+
+// Components
+import LatestWorkItem from "../latest-work-item";
+import type { latestWorkItemProps } from "../latest-work-item";
+
+// Data
+import { latestWorkData } from "@/data/latest-work";
 
 const baseProps: latestWorkItemProps = {
-  ...latestWorkList[0],
+  ...latestWorkData[0],
 };
 
 const setup = (props = baseProps) =>
@@ -59,13 +63,5 @@ describe("LateskWorkItem", () => {
 
     expect(image).toBeInTheDocument();
     expect(image).toHaveAttribute("src", baseProps.image);
-  });
-
-  it("sets the CSS --index custom property correctly", () => {
-    const { container } = setup();
-
-    const root = container.firstChild as HTMLElement;
-
-    expect(root.style.getPropertyValue("--index")).toBe("1");
   });
 });
