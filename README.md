@@ -4,8 +4,9 @@
 
 - [React](https://react.dev/)
 - [React Router](https://reactrouter.com/)
-- [Vite](https://vite.dev/) / [Vitest](https://vitest.dev/)
+- [Vite](https://vite.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Vitest](https://vitest.dev/)
 - [Playwright](https://playwright.dev/) for e2e testing
 
 ## Requirements
@@ -86,5 +87,3 @@ You can also specify the browser in UI mode like so
 ```bash
 pnpm e2e:ui --project firefox
 ```
-
-## CI/CD
