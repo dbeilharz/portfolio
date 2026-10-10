@@ -8,7 +8,7 @@ import tradeinValuationMobile from "@/images/projects/online-tools/tradein-valua
 import automotiveApi from "@/images/projects/automotive-api/swagger.webp";
 import automotiveApiMobile from "@/images/projects/automotive-api/swagger-mobile.webp";
 
-export const latestWorkList = [
+export const latestWorkData = [
   {
     name: "Stock Locator",
     skills: ["React", "Next.js", "AI", "Payments", "Reverse Proxy"],

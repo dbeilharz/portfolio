@@ -1,9 +1,9 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/vitest";
-import ExperienceItem from "../experience/experienceItem";
-import type { ExperienceItemProps } from "../experience/experienceItem";
-import { experienceList } from "../experience/experienceList";
+import ExperienceItem from "../experience/experience-item";
+import type { ExperienceItemProps } from "../experience/experience-item";
+import { experienceList } from "../experience/experience-list";
 
 describe("ExperienceItem", () => {
   const baseProps: ExperienceItemProps = experienceList[0];

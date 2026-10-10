@@ -1,8 +1,8 @@
 // Components
 import Wrapper from "@/layout/layout";
 import Heading from "@/components/ui/heading";
-import ExperienceItem from "./experienceItem";
-import { experienceList } from "./experienceList";
+import ExperienceItem from "./experience-item";
+import { experienceList } from "./experience-list";
 
 export default function HomeExperience() {
   return (

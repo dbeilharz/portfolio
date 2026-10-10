@@ -3,7 +3,8 @@ import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
 import HomeIntroduction from "./components/introduction";
 import HomeExperience from "./components/experience/experience";
-import HomeLatestWork from "./components/latestWork/latestWork";
+import HomeLatestWork from "./components/latest-work/latest-work";
+import MyStack from "./components/my-stack/my-stack";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <HomeIntroduction />
       <HomeExperience />
       <HomeLatestWork />
+      <MyStack />
       <Footer />
     </>
   );
