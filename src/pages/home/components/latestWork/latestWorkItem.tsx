@@ -1,8 +1,6 @@
-// Utilities
-import { Link } from "react-router";
-
 // Components
-import Pill from "../../../../components/ui/pill";
+import Button from "@/components/ui/button";
+import Pill from "@/components/ui/pill";
 
 export type latestWorkItemProps = {
   name: string;
@@ -11,7 +9,6 @@ export type latestWorkItemProps = {
   image: string;
   imageMobile: string;
   imageDescription: string;
-  index: number;
 };
 
 export default function LatestWorkItem({
@@ -21,31 +18,19 @@ export default function LatestWorkItem({
   image,
   imageMobile,
   imageDescription,
-  index,
 }: latestWorkItemProps) {
   return (
-    <div
-      style={{ "--index": `${index + 1}` } as React.CSSProperties}
-      className="card sticky w-full grid-cols-1"
-    >
-      <div className="card__content bg-background flex origin-[50%_0%] flex-col gap-8 rounded-lg p-7 will-change-transform">
+    <div className="w-full">
+      <div className="bg-background flex origin-[50%_0%] flex-col gap-6 rounded-lg">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <h3 className="font-poppins text-heading text-xl font-light lg:text-2xl">
               {name}
             </h3>
-            {linkTo && (
-              <Link to={linkTo} className="underline">
-                View Project
-              </Link>
-            )}
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {skills.map((skill) => (
-              <Pill key={skill}>{skill}</Pill>
-            ))}
+            {linkTo && <Button to={linkTo}>Explore</Button>}
           </div>
         </div>
+
         <div className="border-secondary-bg border">
           <picture>
             <source
@@ -62,6 +47,12 @@ export default function LatestWorkItem({
               height="1350"
             />
           </picture>
+        </div>
+
+        <div className="flex flex-wrap gap-2 lg:gap-3">
+          {skills.map((skill) => (
+            <Pill key={skill}>{skill}</Pill>
+          ))}
         </div>
       </div>
     </div>

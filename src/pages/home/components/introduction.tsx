@@ -19,9 +19,7 @@ export default function HomeIntroduction() {
         </p>
 
         <div className="flex flex-row gap-6">
-          <Button variant="primary" onClick={() => console.log("Clicked!")}>
-            Latest Work
-          </Button>
+          <Button onClick={() => console.log("Clicked!")}>Latest Work</Button>
 
           <Button
             variant="outline"

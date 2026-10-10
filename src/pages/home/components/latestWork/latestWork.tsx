@@ -8,14 +8,9 @@ export default function HomeLatestWork() {
   return (
     <Wrapper>
       <Heading as="h2">Latest Work</Heading>
-      <div
-        className="cards grid gap-8"
-        style={
-          { "--numcards": `${latestWorkList.length}` } as React.CSSProperties
-        }
-      >
-        {latestWorkList.map((item, index) => (
-          <LatestWorkItem key={item.name} {...item} index={index} />
+      <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
+        {latestWorkList.map((item) => (
+          <LatestWorkItem key={item.name} {...item} />
         ))}
       </div>
     </Wrapper>
