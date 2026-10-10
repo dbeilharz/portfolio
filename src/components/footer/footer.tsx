@@ -2,7 +2,6 @@
 import Wrapper from "../ui/wrapper";
 
 export default function Footer() {
-  const year = new Date().getFullYear();
   return (
     <Wrapper as="footer" bgClassName="bg-secondary-bg" className="text-center">
       <p className="font-poppins text-lg font-light lg:text-2xl">
@@ -19,8 +18,7 @@ export default function Footer() {
         </a>
       </div>
       <p className="text-xs lg:text-sm">
-        &copy; Copyright {year} Daniel Beilharz. Built with React. View source
-        code on{" "}
+        &copy; Copyright Daniel Beilharz. Built with React. View source code on{" "}
         <a
           className="text-primary"
           href="https://github.com/dbeilharz/portfolio"
