@@ -1,5 +1,6 @@
 // Components
-import Wrapper from "../ui/wrapper";
+import Wrapper from "@/layout/layout";
+import Button from "@/components/ui/button";
 
 export default function Footer() {
   return (
@@ -8,14 +9,14 @@ export default function Footer() {
         Hit me up if you're interested in working together
       </p>
       <div>
-        <a
+        <Button
           href="https://www.linkedin.com/in/danielbeilharz/"
-          className="btn bg-primary text-white lg:text-xl"
+          variant="primary"
           target="_blank"
           rel="noreferrer"
         >
           Get in touch
-        </a>
+        </Button>
       </div>
       <p className="text-xs lg:text-sm">
         &copy; Copyright Daniel Beilharz. Built with React. View source code on{" "}

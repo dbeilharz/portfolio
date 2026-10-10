@@ -1,6 +1,6 @@
 // Components
-import Wrapper from "../../../../components/ui/wrapper";
-import Heading from "../../../../components/ui/heading";
+import Wrapper from "@/layout/layout";
+import Heading from "@/components/ui/heading";
 import LatestWorkItem from "./latestWorkItem";
 import { latestWorkList } from "./latestWorkList";
 

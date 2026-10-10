@@ -6,7 +6,6 @@
   font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light dark;
   color: var(--color-default);
   background-color: var(--color-background);
   font-synthesis: none;
@@ -17,11 +16,11 @@
 }
 
 @theme {
-  --color-default: light-dark(rgba(0, 0, 0, 0.75), rgba(255, 255, 255, 0.75));
-  --color-primary: light-dark(#006adc, #3395ff);
-  --color-heading: light-dark(#000, #fff);
-  --color-background: light-dark(#fff, #23272f);
-  --color-secondary-bg: light-dark(#f4f4f4, #191b20);
+  --color-default: rgba(0, 0, 0, 0.75);
+  --color-primary: #006adc;
+  --color-heading: #000;
+  --color-background: #fff;
+  --color-secondary-bg: #f4f4f4;
   --font-poppins: "Poppins", sans-serif;
   --text-5xl--line-height: 1.5;
 }
@@ -59,8 +58,8 @@ video {
   .p-container {
     @apply flex w-full flex-col gap-5 text-lg lg:text-xl;
   }
-  .btn {
-    @apply inline-block rounded-4xl px-5 py-1.5;
+  .tag {
+    @apply inline-block rounded-lg px-5 py-1.5;
   }
 }
 

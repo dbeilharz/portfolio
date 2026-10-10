@@ -1,8 +1,8 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/vitest";
-import Wrapper from "../wrapper";
-import type { WrapperProps } from "../wrapper";
+import Wrapper from "../../../layout/layout";
+import type { WrapperProps } from "../../../layout/layout";
 
 const sampleText = "Sample Content";
 
