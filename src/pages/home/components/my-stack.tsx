@@ -60,7 +60,7 @@ const getIcon = (slug: string) => {
   }
 };
 
-export default function HomeLatestWork() {
+export default function HomeMyStack() {
   return (
     <Wrapper>
       <Heading as="h2">My Stack</Heading>

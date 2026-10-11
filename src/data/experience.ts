@@ -21,6 +21,6 @@ export const experienceList = [
     date: "August 2010 - October 2011",
     position: "Graphic & Website Designer",
     company: "My Rewards International",
-    href: "https://www.myrewardsinternational.com",
+    href: "",
   },
 ];

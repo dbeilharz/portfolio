@@ -1,67 +1,68 @@
-import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/vitest";
 import { MemoryRouter } from "react-router";
+import LatestWorkItem, { type latestWorkItemProps } from "../latest-work-item";
 
-// Components
-import LatestWorkItem from "../latest-work-item";
-import type { latestWorkItemProps } from "../latest-work-item";
+describe("LatestWorkItem Component", () => {
+  const baseProps: latestWorkItemProps = {
+    name: "Stock Locator",
+    skills: ["React", "TypeScript", "Tailwind"],
+    linkTo: "/projects/stock-locator",
+    image: "/images/stock-desktop.png",
+    imageMobile: "/images/stock-mobile.png",
+    imageDescription: "Stock results dashboard preview",
+  };
 
-// Data
-import { latestWorkData } from "@/data/latest-work";
-
-const baseProps: latestWorkItemProps = {
-  ...latestWorkData[0],
-};
-
-const setup = (props = baseProps) =>
-  render(
-    <MemoryRouter>
-      <LatestWorkItem {...props} />
-    </MemoryRouter>
-  );
-
-describe("LateskWorkItem", () => {
-  it("renders the project name", () => {
-    setup();
+  it("renders the project name and image alt text correctly", () => {
+    render(
+      <MemoryRouter>
+        <LatestWorkItem {...baseProps} />
+      </MemoryRouter>
+    );
 
     expect(
-      screen.getByRole("heading", { name: baseProps.name })
+      screen.getByRole("heading", { name: /stock locator/i })
     ).toBeInTheDocument();
+
+    const image = screen.getByAltText(/stock results dashboard preview/i);
+    expect(image).toBeInTheDocument();
+    expect(image).toHaveAttribute("src", baseProps.image);
   });
 
-  it("renders the skills", () => {
-    setup();
+  it("renders all skill pills", () => {
+    render(
+      <MemoryRouter>
+        <LatestWorkItem {...baseProps} />
+      </MemoryRouter>
+    );
 
     baseProps.skills.forEach((skill) => {
       expect(screen.getByText(skill)).toBeInTheDocument();
     });
   });
 
-  it("renders view project link when it exists", () => {
-    const sampleLink = "/latest-work";
-    setup({ ...baseProps, linkTo: sampleLink });
+  it("renders the 'Explore' button when linkTo is provided", () => {
+    render(
+      <MemoryRouter>
+        <LatestWorkItem {...baseProps} />
+      </MemoryRouter>
+    );
 
-    const link = screen.getByRole("link", { name: /view project/i });
-
-    expect(link).toBeInTheDocument();
-    expect(link).toHaveAttribute("href", sampleLink);
+    const exploreLink = screen.getByRole("link", { name: /explore/i });
+    expect(exploreLink).toBeInTheDocument();
+    expect(exploreLink).toHaveAttribute("href", baseProps.linkTo);
   });
 
-  it("does not render a link when linkTo is not provided", () => {
-    setup({ ...baseProps, linkTo: undefined });
+  it("does not render the 'Explore' button when linkTo is omitted", () => {
+    const propsWithoutLink = { ...baseProps, linkTo: undefined };
 
-    expect(
-      screen.queryByRole("link", { name: /view project/i })
-    ).not.toBeInTheDocument();
-  });
+    render(
+      <MemoryRouter>
+        <LatestWorkItem {...propsWithoutLink} />
+      </MemoryRouter>
+    );
 
-  it("renders the image with correct alt text", () => {
-    setup();
-
-    const image = screen.getByAltText(baseProps.imageDescription);
-
-    expect(image).toBeInTheDocument();
-    expect(image).toHaveAttribute("src", baseProps.image);
+    const exploreLink = screen.queryByRole("link", { name: /explore/i });
+    expect(exploreLink).not.toBeInTheDocument();
   });
 });
