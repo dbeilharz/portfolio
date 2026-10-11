@@ -1,8 +1,7 @@
-// Utilities
-import { Link } from "react-router";
-
 // Components
-import Pill from "../../../../components/ui/pill";
+import Button from "@/components/ui/button";
+import Pill from "@/components/ui/pill";
+import { ScrollReveal } from "@/components/animations/scroll-reveal";
 
 export type latestWorkItemProps = {
   name: string;
@@ -11,7 +10,7 @@ export type latestWorkItemProps = {
   image: string;
   imageMobile: string;
   imageDescription: string;
-  index: number;
+  delay?: number;
 };
 
 export default function LatestWorkItem({
@@ -21,32 +20,21 @@ export default function LatestWorkItem({
   image,
   imageMobile,
   imageDescription,
-  index,
-}: latestWorkItemProps) {
+  delay,
+}: Readonly<latestWorkItemProps>) {
   return (
-    <div
-      style={{ "--index": `${index + 1}` } as React.CSSProperties}
-      className="card sticky w-full grid-cols-1"
-    >
-      <div className="card__content bg-background flex origin-[50%_0%] flex-col gap-8 rounded-lg p-7 will-change-transform">
+    <ScrollReveal className="w-full" delay={delay}>
+      <div className="bg-background flex origin-[50%_0%] flex-col gap-6 rounded-lg">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <h3 className="font-poppins text-heading text-xl font-light lg:text-2xl">
               {name}
             </h3>
-            {linkTo && (
-              <Link to={linkTo} className="underline">
-                View Project
-              </Link>
-            )}
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {skills.map((skill) => (
-              <Pill key={skill}>{skill}</Pill>
-            ))}
+            {linkTo && <Button to={linkTo}>Explore</Button>}
           </div>
         </div>
-        <div className="border-secondary-bg border">
+
+        <div className="border-secondary-bg overflow-hidden rounded-lg border">
           <picture>
             <source
               media="(min-width: 768px)"
@@ -63,7 +51,13 @@ export default function LatestWorkItem({
             />
           </picture>
         </div>
+
+        <div className="flex flex-wrap gap-2 lg:gap-3">
+          {skills.map((skill) => (
+            <Pill key={skill}>{skill}</Pill>
+          ))}
+        </div>
       </div>
-    </div>
+    </ScrollReveal>
   );
 }

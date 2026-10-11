@@ -8,7 +8,7 @@ describe("Home Page", () => {
   });
 
   test("has title", async ({ page }) => {
-    await expect(page).toHaveTitle("Daniel Beilharz - Portfolio");
+    await expect(page).toHaveTitle("Daniel Beilharz | Full-Stack Developer");
   });
 
   test("should display all page elements", async ({ page }) => {
@@ -24,6 +24,7 @@ describe("Home Page", () => {
     await expect(
       page.getByRole("heading", { name: "Latest Work" })
     ).toBeVisible();
+    await expect(page.getByRole("heading", { name: "My Stack" })).toBeVisible();
     await expect(
       page.getByRole("link", { name: "Get in touch >" })
     ).toBeVisible();

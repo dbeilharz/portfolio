@@ -1,8 +1,8 @@
 // Components
-import Wrapper from "../ui/wrapper";
+import Wrapper from "@/layout/layout";
 
 // Images
-import headshot from "../../images/headshot.webp";
+import headshot from "@/images/headshot.webp";
 
 export default function Header() {
   return (
@@ -20,7 +20,7 @@ export default function Header() {
           />
         </div>
         <div className="leading-8 lg:flex lg:w-full lg:justify-between">
-          <p className="text-black dark:text-white">Daniel Beilharz</p>
+          <p className="text-black">Daniel Beilharz</p>
           <nav>
             <ul>
               <li>
