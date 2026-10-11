@@ -34,7 +34,7 @@ export default function LatestWorkItem({
           </div>
         </div>
 
-        <div className="border-secondary-bg border">
+        <div className="border-secondary-bg overflow-hidden rounded-lg border">
           <picture>
             <source
               media="(min-width: 768px)"
