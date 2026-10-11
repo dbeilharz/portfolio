@@ -26,6 +26,16 @@ vi.mock("@/layout/layout", () => ({
   ),
 }));
 
+// Mock IntersectionObserver
+class MockIntersectionObserver {
+  observe = vi.fn();
+  unobserve = vi.fn();
+  disconnect = vi.fn();
+}
+
+window.IntersectionObserver =
+  MockIntersectionObserver as unknown as typeof IntersectionObserver;
+
 vi.mock("@/components/ui/heading", () => ({
   default: ({ children }: { children: React.ReactNode }) => <h1>{children}</h1>,
 }));

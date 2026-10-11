@@ -1,7 +1,7 @@
 // Components
 import Wrapper from "@/layout/layout";
 import Heading from "@/components/ui/heading";
-import { myStackData } from "@/data/my-stack";
+import { ScrollReveal } from "@/components/animations/scroll-reveal";
 import {
   SiReact,
   SiNextdotjs,
@@ -19,6 +19,9 @@ import {
   SiVitest,
   SiJest,
 } from "react-icons/si";
+
+// Data
+import { myStackData } from "@/data/my-stack";
 
 // Map icons helper function
 const getIcon = (slug: string) => {
@@ -70,16 +73,17 @@ export default function HomeMyStack() {
             {group.category}
           </h3>
           <div className="flex flex-wrap gap-4">
-            {group.items.map((item) => (
-              <div
+            {group.items.map((item, i) => (
+              <ScrollReveal
                 key={item.name}
                 className="flex items-center gap-2 rounded-lg border border-black/20 p-3 lg:gap-3"
+                delay={i * 200}
               >
                 <span className="text-primary text-2xl">
                   {getIcon(item.slug)}
                 </span>
                 <span>{item.name}</span>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

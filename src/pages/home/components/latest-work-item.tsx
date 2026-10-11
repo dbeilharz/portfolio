@@ -1,6 +1,7 @@
 // Components
 import Button from "@/components/ui/button";
 import Pill from "@/components/ui/pill";
+import { ScrollReveal } from "@/components/animations/scroll-reveal";
 
 export type latestWorkItemProps = {
   name: string;
@@ -9,6 +10,7 @@ export type latestWorkItemProps = {
   image: string;
   imageMobile: string;
   imageDescription: string;
+  delay?: number;
 };
 
 export default function LatestWorkItem({
@@ -18,9 +20,10 @@ export default function LatestWorkItem({
   image,
   imageMobile,
   imageDescription,
+  delay,
 }: Readonly<latestWorkItemProps>) {
   return (
-    <div className="w-full">
+    <ScrollReveal className="w-full" delay={delay}>
       <div className="bg-background flex origin-[50%_0%] flex-col gap-6 rounded-lg">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
@@ -55,6 +58,6 @@ export default function LatestWorkItem({
           ))}
         </div>
       </div>
-    </div>
+    </ScrollReveal>
   );
 }

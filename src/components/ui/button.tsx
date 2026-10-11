@@ -24,8 +24,8 @@ const Button: React.FC<ButtonProps> = ({
 
   const variantStyles =
     variant === "primary"
-      ? "bg-primary text-white"
-      : "border border-primary text-primary";
+      ? "bg-primary text-white hover:bg-black/80"
+      : "border border-primary text-primary hover:bg-primary hover:text-white";
 
   let sizeStyles = "";
   if (size === "sm") {

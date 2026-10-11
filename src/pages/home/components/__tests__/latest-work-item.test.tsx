@@ -3,6 +3,16 @@ import "@testing-library/jest-dom/vitest";
 import { MemoryRouter } from "react-router";
 import LatestWorkItem, { type latestWorkItemProps } from "../latest-work-item";
 
+// Mock IntersectionObserver
+class MockIntersectionObserver {
+  observe = vi.fn();
+  unobserve = vi.fn();
+  disconnect = vi.fn();
+}
+
+window.IntersectionObserver =
+  MockIntersectionObserver as unknown as typeof IntersectionObserver;
+
 describe("LatestWorkItem Component", () => {
   const baseProps: latestWorkItemProps = {
     name: "Stock Locator",

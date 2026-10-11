@@ -7,6 +7,16 @@ import type { ExperienceItemProps } from "../experience-item";
 // Data
 import { experienceList } from "@/data/experience";
 
+// Mock IntersectionObserver
+class MockIntersectionObserver {
+  observe = vi.fn();
+  unobserve = vi.fn();
+  disconnect = vi.fn();
+}
+
+window.IntersectionObserver =
+  MockIntersectionObserver as unknown as typeof IntersectionObserver;
+
 describe("ExperienceItem", () => {
   const baseProps: ExperienceItemProps = experienceList[0];
 
