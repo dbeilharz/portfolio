@@ -6,11 +6,11 @@ export type PillProps = {
   children: string;
 };
 
-export default function Pill({ className, children }: PillProps) {
+export default function Pill({ className, children }: Readonly<PillProps>) {
   return (
     <div
       className={twMerge(
-        "btn text-primary border-primary border text-xs md:text-sm lg:text-base",
+        "tag text-primary border-primary border text-xs md:text-sm lg:text-base",
         className
       )}
     >

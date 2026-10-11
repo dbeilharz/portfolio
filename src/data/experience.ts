@@ -1,6 +1,12 @@
 export const experienceList = [
   {
-    date: "June 2014 - Present",
+    date: "January 2026 - Present",
+    position: "Senior Full Stack Developer",
+    company: "3 Phase Marketing",
+    href: "https://3pmauto.ai",
+  },
+  {
+    date: "June 2014 - January 2026",
     position: "Senior Developer",
     company: "AdTorque Edge",
     href: "https://www.adtorqueedge.com",
@@ -15,6 +21,6 @@ export const experienceList = [
     date: "August 2010 - October 2011",
     position: "Graphic & Website Designer",
     company: "My Rewards International",
-    href: "https://www.myrewardsinternational.com",
+    href: "",
   },
 ];

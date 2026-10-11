@@ -1,9 +1,21 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/vitest";
-import ExperienceItem from "../experience/experienceItem";
-import type { ExperienceItemProps } from "../experience/experienceItem";
-import { experienceList } from "../experience/experienceList";
+import ExperienceItem from "../experience-item";
+import type { ExperienceItemProps } from "../experience-item";
+
+// Data
+import { experienceList } from "@/data/experience";
+
+// Mock IntersectionObserver
+class MockIntersectionObserver {
+  observe = vi.fn();
+  unobserve = vi.fn();
+  disconnect = vi.fn();
+}
+
+window.IntersectionObserver =
+  MockIntersectionObserver as unknown as typeof IntersectionObserver;
 
 describe("ExperienceItem", () => {
   const baseProps: ExperienceItemProps = experienceList[0];

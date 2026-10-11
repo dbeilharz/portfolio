@@ -21,7 +21,7 @@ describe("Pill", () => {
 
     const pill = screen.getByText(sampleText);
 
-    expect(pill).toHaveClass("btn");
+    expect(pill).toHaveClass("tag");
     expect(pill).toHaveClass("border");
     expect(pill).toHaveClass("text-primary");
     expect(pill).toHaveClass("text-xs");

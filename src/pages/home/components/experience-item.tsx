@@ -1,3 +1,5 @@
+import { ScrollReveal } from "@/components/animations/scroll-reveal";
+
 export type ExperienceItemProps = {
   date: string;
   position: string;
@@ -10,9 +12,9 @@ export default function ExperienceItem({
   position,
   company,
   href,
-}: ExperienceItemProps) {
+}: Readonly<ExperienceItemProps>) {
   return (
-    <div className="border-b border-dashed pb-5">
+    <ScrollReveal className="border-b border-dashed pb-5">
       <p className="text-sm lg:text-base">{date}</p>
       <div className="text-lg lg:text-xl">
         {position}{" "}
@@ -32,6 +34,6 @@ export default function ExperienceItem({
           )}
         </span>
       </div>
-    </div>
+    </ScrollReveal>
   );
 }

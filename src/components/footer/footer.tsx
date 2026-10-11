@@ -1,26 +1,25 @@
 // Components
-import Wrapper from "../ui/wrapper";
+import Wrapper from "@/layout/layout";
+import Button from "@/components/ui/button";
 
 export default function Footer() {
-  const year = new Date().getFullYear();
   return (
     <Wrapper as="footer" bgClassName="bg-secondary-bg" className="text-center">
       <p className="font-poppins text-lg font-light lg:text-2xl">
         Hit me up if you're interested in working together
       </p>
       <div>
-        <a
+        <Button
           href="https://www.linkedin.com/in/danielbeilharz/"
-          className="btn bg-primary text-white lg:text-xl"
+          variant="primary"
           target="_blank"
           rel="noreferrer"
         >
           Get in touch
-        </a>
+        </Button>
       </div>
       <p className="text-xs lg:text-sm">
-        &copy; Copyright {year} Daniel Beilharz. Built with React. View source
-        code on{" "}
+        &copy; Copyright Daniel Beilharz. Built with React. View source code on{" "}
         <a
           className="text-primary"
           href="https://github.com/dbeilharz/portfolio"
@@ -29,7 +28,7 @@ export default function Footer() {
         >
           Github
         </a>
-        .
+        {"."}
       </p>
     </Wrapper>
   );
